@@ -6,16 +6,11 @@ The project demonstrates how a vehicle can follow different trajectories such as
 - Circular paths
 - Figure-eight paths
 
-The model tion is implemented in Python using a discrete-time kinematic update step.
+The model is implemented in Python using a discrete-time kinematic update step.
 
 The bicycle kinematics equations are:
-$$\begin{align*}
-\dot{x}_c &= v \cos{(\theta + \beta)} \\
-\dot{y}_c &= v \sin{(\theta + \beta)} \\
-\dot{\theta} &= \frac{v \cos{\beta} \tan{\delta}}{L} \\
-\beta &= \tan^{-1}(\frac{l_r \tan{\delta}}{L})
-\end{align*}$$
 
+![Kinematic Model Equations](images/kinematic_equations.png)
 
 Where:
 - $\theta$: heading angle
@@ -27,16 +22,14 @@ Where:
 - $l_r$: distance from rear axle to center
 
 velocity $v$ can be computed as:
-$$\begin{align*}
-    v &= \frac{d}{t}\\
-\end{align*}$$
+
+![velocity Equation](images/velocity.png)
 
 and the desired steering angle $\delta$ as 
-$$\begin{align*}
-    \tan{\delta} &= \frac{L}{r} \\
-    \delta &= \tan^{-1}(\frac{L}{r}) \\
-\end{align*}$$
-## 🚗 Model Overview
+
+![Steering Angle Equation](images/steering_angle_equation.png)
+
+##  Model Overview
 
 The **Bicycle model** is a simplified representation of a vehicle with two wheels:
 - It updates the vehicle’s position and orientation based on steering and velocity commands.
